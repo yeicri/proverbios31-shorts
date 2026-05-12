@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Proverbios 31 Shorts</title>
 
@@ -11,10 +11,10 @@
 body{
 margin:0;
 height:100vh;
+overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
-overflow:hidden;
 background:
 linear-gradient(180deg,#f5eee6 0%,#d8c3a5 50%,#8e735b 100%);
 font-family:Georgia, serif;
@@ -22,17 +22,17 @@ font-family:Georgia, serif;
 
 .glow{
 position:absolute;
-width:500px;
-height:500px;
+width:600px;
+height:600px;
+background:rgba(255,255,255,0.25);
 border-radius:999px;
-background:rgba(255,255,255,0.35);
-filter:blur(80px);
-top:-100px;
-left:-100px;
+filter:blur(90px);
+top:-120px;
+left:-120px;
 }
 
 .card{
-width:70%;
+width:75%;
 text-align:center;
 color:#2f241d;
 animation:fade 2s ease;
@@ -40,28 +40,31 @@ animation:fade 2s ease;
 
 .symbol{
 font-size:60px;
-margin-bottom:30px;
+margin-bottom:35px;
 opacity:0.7;
+animation:float 5s ease-in-out infinite;
 }
 
 h1{
-font-size:70px;
+font-size:72px;
 font-weight:400;
-line-height:1.2;
+line-height:1.15;
 margin:0;
+animation:fadeUp 2s ease;
 }
 
 p{
 margin-top:40px;
-font-size:32px;
+font-size:34px;
 opacity:0.8;
+animation:fadeUp 3s ease;
 }
 
 .footer{
 position:absolute;
 bottom:40px;
 font-size:18px;
-letter-spacing:4px;
+letter-spacing:5px;
 text-transform:uppercase;
 opacity:0.6;
 }
@@ -69,10 +72,31 @@ opacity:0.6;
 @keyframes fade{
 from{
 opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
 transform:translateY(30px);
 }
 to{
 opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes float{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-12px);
+}
+100%{
 transform:translateY(0px);
 }
 }
@@ -86,22 +110,70 @@ transform:translateY(0px);
 
 <div class="card">
 
-<div class="symbol">✦</div>
+<div class="symbol" id="symbol">
+✦
+</div>
 
-<h1>
+<h1 id="verse">
 La mujer sabia<br>
 edifica su casa
 </h1>
 
-<p>
+<p id="reference">
 Proverbios 14:1
 </p>
 
 </div>
 
 <div class="footer">
-Proverbios 31
+PROVERBIOS 31
 </div>
+
+<script>
+
+const verses = [
+
+{
+text:"La mujer sabia<br>edifica su casa",
+ref:"Proverbios 14:1"
+},
+
+{
+text:"Está vestida<br>de fortaleza y dignidad",
+ref:"Proverbios 31:25"
+},
+
+{
+text:"Abre su boca<br>con sabiduría",
+ref:"Proverbios 31:26"
+},
+
+{
+text:"Su lámpara<br>no se apaga de noche",
+ref:"Proverbios 31:18"
+}
+
+];
+
+let current = 0;
+
+setInterval(()=>{
+
+current++;
+
+if(current >= verses.length){
+current = 0;
+}
+
+document.getElementById("verse").innerHTML =
+verses[current].text;
+
+document.getElementById("reference").innerHTML =
+verses[current].ref;
+
+},5000);
+
+</script>
 
 </body>
 </html>
