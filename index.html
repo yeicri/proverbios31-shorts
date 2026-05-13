@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proverbios 31 Shorts</title>
+<title>Fátima Short</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 body{
@@ -14,7 +16,29 @@ display:flex;
 justify-content:center;
 align-items:center;
 font-family:'Cormorant Garamond', serif;
-background:linear-gradient(180deg,#f5eee6 0%,#d8c3a5 50%,#8e735b 100%);
+background:black;
+}
+
+.bg{
+position:fixed;
+inset:0;
+background-image:url('fatima1.jpg');
+background-size:cover;
+background-position:center;
+transition:background-image 1.5s ease-in-out;
+animation:slowZoom 12s ease-in-out infinite alternate;
+z-index:-3;
+}
+
+.overlay{
+position:fixed;
+inset:0;
+background:linear-gradient(
+180deg,
+rgba(0,0,0,0.25),
+rgba(0,0,0,0.45)
+);
+z-index:-2;
 }
 
 .light{
@@ -22,80 +46,73 @@ position:fixed;
 width:700px;
 height:700px;
 border-radius:50%;
-background:rgba(255,255,255,0.38);
-filter:blur(90px);
-top:-180px;
-left:-180px;
-animation:lightMove 10s ease-in-out infinite alternate;
-}
-
-.light2{
-position:fixed;
-width:600px;
-height:600px;
-border-radius:50%;
-background:rgba(255,230,190,0.28);
+background:rgba(255,230,180,0.25);
 filter:blur(100px);
-bottom:-180px;
-right:-160px;
-animation:lightMove2 12s ease-in-out infinite alternate;
+top:-160px;
+left:-120px;
+animation:lightMove 10s ease-in-out infinite alternate;
+z-index:-1;
 }
 
 .card{
-width:75%;
+width:78%;
 text-align:center;
-color:#2f241d;
+color:white;
+text-shadow:0 4px 20px rgba(0,0,0,0.55);
 animation:floatCard 8s ease-in-out infinite;
 }
 
 .symbol{
-font-size:60px;
-margin-bottom:35px;
-opacity:0.75;
+font-size:58px;
+margin-bottom:30px;
+opacity:0.9;
 animation:floatSymbol 4s ease-in-out infinite;
 }
 
 h1{
-font-size:72px;
-font-weight:400;
-line-height:1.15;
+font-size:74px;
+font-weight:300;
+line-height:1.12;
 margin:0;
+letter-spacing:1px;
 }
 
 p{
-margin-top:40px;
+margin-top:38px;
 font-size:34px;
-opacity:0.8;
+opacity:0.9;
+letter-spacing:2px;
 }
 
 .footer{
 position:absolute;
-bottom:40px;
+bottom:42px;
 font-size:18px;
-letter-spacing:5px;
+letter-spacing:6px;
 text-transform:uppercase;
-opacity:0.6;
+color:white;
+opacity:0.75;
+}
+
+@keyframes slowZoom{
+from{transform:scale(1);}
+to{transform:scale(1.08);}
 }
 
 @keyframes lightMove{
 from{transform:translate(0,0) scale(1);}
-to{transform:translate(260px,180px) scale(1.25);}
-}
-
-@keyframes lightMove2{
-from{transform:translate(0,0) scale(1);}
-to{transform:translate(-240px,-160px) scale(1.2);}
+to{transform:translate(220px,160px) scale(1.2);}
 }
 
 @keyframes floatCard{
-0%{transform:translateY(0px) scale(1);}
-50%{transform:translateY(-10px) scale(1.02);}
-100%{transform:translateY(0px) scale(1);}
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
 }
 
 @keyframes floatSymbol{
 0%{transform:translateY(0px);}
-50%{transform:translateY(-14px);}
+50%{transform:translateY(-12px);}
 100%{transform:translateY(0px);}
 }
 </style>
@@ -103,43 +120,64 @@ to{transform:translate(-240px,-160px) scale(1.2);}
 
 <body>
 
+<div class="bg" id="bg"></div>
+<div class="overlay"></div>
 <div class="light"></div>
-<div class="light2"></div>
 
 <div class="card">
 <div class="symbol">✦</div>
 
-<h1 id="verse">
-La mujer sabia<br>
-edifica su casa
+<h1 id="text">
+Mi Inmaculado Corazón<br>
+será tu refugio
 </h1>
 
-<p id="reference">
-Proverbios 14:1
+<p id="ref">
+Virgen de Fátima
 </p>
 </div>
 
 <div class="footer">
-PROVERBIOS 31
+NUESTRA SEÑORA DE FÁTIMA
 </div>
 
 <script>
-const verses = [
-{text:"La mujer sabia<br>edifica su casa", ref:"Proverbios 14:1"},
-{text:"Está vestida<br>de fortaleza y dignidad", ref:"Proverbios 31:25"},
-{text:"Abre su boca<br>con sabiduría", ref:"Proverbios 31:26"},
-{text:"Su lámpara<br>no se apaga de noche", ref:"Proverbios 31:18"},
-{text:"Engañosa es la gracia<br>y vana la belleza", ref:"Proverbios 31:30"}
+const scenes = [
+{
+text:"Mi Inmaculado Corazón<br>será tu refugio",
+ref:"Virgen de Fátima",
+image:"fatima1.jpg"
+},
+{
+text:"Recen el Rosario<br>todos los días",
+ref:"Fátima 1917",
+image:"fatima2.jpg"
+},
+{
+text:"Hagan sacrificios<br>por los pecadores",
+ref:"Nuestra Señora de Fátima",
+image:"fatima3.jpg"
+},
+{
+text:"No ofendan más<br>a Dios Nuestro Señor",
+ref:"Mensaje de Fátima",
+image:"fatima4.jpg"
+}
 ];
 
 let current = 0;
 
 setInterval(()=>{
 current++;
-if(current >= verses.length){current = 0;}
+if(current >= scenes.length){
+current = 0;
+}
 
-document.getElementById("verse").innerHTML = verses[current].text;
-document.getElementById("reference").innerHTML = verses[current].ref;
+document.getElementById("text").innerHTML = scenes[current].text;
+document.getElementById("ref").innerHTML = scenes[current].ref;
+document.getElementById("bg").style.backgroundImage =
+"url('" + scenes[current].image + "')";
+
 },5000);
 </script>
 
