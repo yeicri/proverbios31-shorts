@@ -38,11 +38,15 @@ background:black;
 .bg{
 position:fixed;
 inset:0;
+width:min(90vw,420px);
+aspect-ratio:9/16;
+left:50%;
+transform:translateX(-50%);
 background-image:url('fatima1.jpg.png');
-background-size:100% auto;
+background-size:cover;
 background-repeat:no-repeat;
 background-color:black;
-background-position:center 18%;
+background-position:center;
 transition:background-image 1.5s ease-in-out;
 animation:slowZoom 12s ease-in-out infinite alternate;
 z-index:-3;
