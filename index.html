@@ -165,6 +165,8 @@ to{transform:translate(220px,160px) scale(1.2);}
 </div>
 
 <script>
+const scenes = [
+
 {
 text:"✝️<br>EVANGELIO<br>DEL DÍA",
 ref:"Jn 16, 29-33",
@@ -190,10 +192,31 @@ image:"evangelio.jpg.png"
 },
 
 {
-text:"No estás solo.<br>Dios sigue contigo.",
-
+text:"No estás sola.<br>Dios sigue contigo.",
+ref:"Evangelio del Día",
 image:"evangelio.jpg.png"
 }
+
+];
+
+let current = 0;
+
+setInterval(()=>{
+
+current++;
+
+if(current >= scenes.length){
+current = 0;
+}
+
+document.getElementById("text").innerHTML = scenes[current].text;
+
+document.getElementById("ref").innerHTML = scenes[current].ref;
+
+document.getElementById("bg").style.backgroundImage =
+"url('" + scenes[current].image + "')";
+
+},5000);
 ];
 
 let current = 0;
