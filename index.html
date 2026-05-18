@@ -182,7 +182,7 @@ const scenes = [
 
 {
 text:"✝️<br>EVANGELIO<br>DEL DÍA",
-ref:" ",
+ref:"Juan 16, 29-33",
 image:"evangelio.jpg.png"
 },
 
@@ -213,7 +213,12 @@ image:"evangelio.jpg.png"
 ];
 
 let current = 0;
+document.getElementById("text").innerHTML = scenes[0].text;
 
+document.getElementById("ref").innerHTML = scenes[0].ref;
+
+document.getElementById("bg").style.backgroundImage =
+"url('" + scenes[0].image + "')";
 setInterval(()=>{
 
 current++;
