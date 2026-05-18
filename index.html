@@ -217,22 +217,6 @@ document.getElementById("bg").style.backgroundImage =
 "url('" + scenes[current].image + "')";
 
 },5000);
-];
-
-let current = 0;
-
-setInterval(()=>{
-current++;
-if(current >= scenes.length){
-current = 0;
-}
-
-document.getElementById("text").innerHTML = scenes[current].text;
-document.getElementById("ref").innerHTML = scenes[current].ref;
-document.getElementById("bg").style.backgroundImage =
-"url('" + scenes[current].image + "')";
-
-},5000);
 </script>
 </div>
 </body>
