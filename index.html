@@ -47,6 +47,8 @@ background-size:cover;
 background-repeat:no-repeat;
 background-position:center;
 z-index:1;
+
+animation:slowBackground 18s ease-in-out infinite alternate;
 }
 
 .overlay{
@@ -96,18 +98,18 @@ animation:floatSymbol 4s ease-in-out infinite;
 }
 
 h1{
-font-size:74px;
+font-size:48px;
 font-weight:300;
-line-height:1.12;
+line-height:1.2;
 margin:0;
 letter-spacing:1px;
 }
 
 p{
-margin-top:38px;
-font-size:34px;
-opacity:0.9;
-letter-spacing:2px;
+margin-top:28px;
+font-size:20px;
+opacity:0.82;
+letter-spacing:1.5px;
 }
 
 .footer{
@@ -141,6 +143,14 @@ to{transform:translate(220px,160px) scale(1.2);}
 50%{transform:translateY(-12px);}
 100%{transform:translateY(0px);}
 }
+@keyframes slowBackground{
+0%{
+transform:scale(1) translateY(0px);
+}
+100%{
+transform:scale(1.08) translateY(-14px);
+}
+}  
 </style>
 </head>
 
@@ -175,25 +185,25 @@ image:"evangelio.jpg.png"
 
 {
 text:"En el mundo<br>tendrán tribulaciones",
-ref:"Jesús",
+ref:"Juan 16, 33",
 image:"evangelio.jpg.png"
 },
 
 {
 text:"Pero<br>tengan valor",
-ref:"Juan 16,33",
+ref:"Juan 16, 33",
 image:"evangelio.jpg.png"
 },
 
 {
 text:"Yo he vencido<br>al mundo",
-ref:"Cristo",
+ref:"Juan 16, 33",
 image:"evangelio.jpg.png"
 },
 
 {
-text:"No estás sola.<br>Dios sigue contigo.",
-ref:"Evangelio del Día",
+text:"La última palabra<br>la tiene Jesús",
+ref:"Guarda esta Palabra hoy",
 image:"evangelio.jpg.png"
 }
 
@@ -210,9 +220,7 @@ current = 0;
 }
 
 document.getElementById("text").innerHTML = scenes[current].text;
-
 document.getElementById("ref").innerHTML = scenes[current].ref;
-
 document.getElementById("bg").style.backgroundImage =
 "url('" + scenes[current].image + "')";
 
