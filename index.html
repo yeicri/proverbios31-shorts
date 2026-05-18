@@ -8,14 +8,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-.video-frame{
-width:390px;
-height:844px;
-margin:0 auto;
-overflow:hidden;
-position:relative;
-background:#f4ede0;
-border-radius:30px;
+.video-frame {
+  width: 390px;
+  height: 844px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background: black;
+  border-radius: 30px;
 }
 
 .video-frame img {
@@ -45,22 +45,18 @@ height:100%;
 background-image:url('evangelio.jpg.png');
 background-size:cover;
 background-repeat:no-repeat;
-background-color:black;
 background-position:center;
-transition:background-image 1.5s ease-in-out;
-animation:slowZoom 12s ease-in-out infinite alternate;
-z-index:-3;
+z-index:1;
 }
 
 .overlay{
-position:fixed;
-inset:0;
-background:linear-gradient(
-180deg,
-rgba(0,0,0,0.25),
-rgba(0,0,0,0.45)
-);
-z-index:-2;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.25);
+z-index:2;
 }
 
 .light{
@@ -176,23 +172,23 @@ Virgen de Fátima
 <script>
 const scenes = [
 {
-text:"Mi Inmaculado Corazón<br>será tu refugio",
-ref:"Virgen de Fátima",
+text:"En el mundo<br>tendrán tribulaciones",
+ref:"Juan 16, 33",
 image:"evangelio.jpg.png"
 },
 {
-text:"Recen el Rosario<br>todos los días",
-ref:"Fátima 1917",
+text:"Pero tengan valor",
+ref:"Evangelio del Día",
 image:"evangelio.jpg.png"
 },
 {
-text:"Hagan sacrificios<br>por los pecadores",
-ref:"Nuestra Señora de Fátima",
+text:"Yo he vencido<br>al mundo",
+ref:"Juan 16, 33",
 image:"evangelio.jpg.png"
 },
 {
-text:"Virgen de Fátima<br>Ruega por nosotros",
-ref:"Mensaje de Fátima",
+text:"No estás sola.<br>Cristo ya venció.",
+ref:"Guarda esta Palabra hoy",
 image:"evangelio.jpg.png"
 }
 ];
